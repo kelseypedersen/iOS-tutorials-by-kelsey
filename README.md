@@ -1,3 +1,3 @@
 # iOS-tutorials-by-kelsey
 
-[Connecting Your Xcode Project with Github](/.../github-xcode.md)
+[Connecting Your Xcode Project with Github](/tutorials/github-xcode.md)
