@@ -9,8 +9,8 @@ There are two main steps to creating tracking your project on Github.
 
 In your terminal, move to your project directory by using the command "cd". Once in your Xcode project directory, check the status of your files, add the files you are looking to track, and commit those files.
 
-```
 ### Use the commands:
+```
 git status
 git add FILENAME
 git commit -v "COMMIT MESSAGE"
@@ -22,8 +22,8 @@ Once committed, you are ready to connect to your Github repository. If you haven
 SSH clone URL e.g.: git@github.com:kpedersen00/iOS-tutorials-by-kelsey.git
 ```
 
-```
 ### Use the commands:
+```
 git remote add origin git@github.com:kpedersen00/iOS-tutorials-by-kelsey.git
 git push -u origin master
 ```
