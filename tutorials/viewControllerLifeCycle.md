@@ -1,6 +1,6 @@
 ## Summary of the viewController Lifecycle
 
-### Opening The App
+### Opening the app
 1. Instantiated (from the storyboard or elsewhere - many options)
 2. awakeFromNib
 3. Outlets set
