@@ -2,6 +2,8 @@
 
 [Connecting Your Xcode Project with Github](/tutorials/github-xcode.md)
 
+[Objective-C Basics from Apple Docs](/tutorials/objective-c-basics.md)
+
 [Enabling Autorotation in Objective-C](/tutorials/autorotation.md)
 
 [Summary of the viewController Lifecycle](/tutorials/viewControllerLifeCycle.md)
