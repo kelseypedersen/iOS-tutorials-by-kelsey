@@ -99,6 +99,53 @@ E.g. Restoring default settings in an app when the user clicks 'clear.' First yo
 E.g. In the to-do app, when a user clicks on the save button in the addTodoItemViewController, it triggers the unwindToList: action. The event triggering the action message is the user clicking on the save button, the save button is the object sending the message, the target object is the todoListTableViewController and the message is unwindToList:.
 
 ### Strings
+NSString provides built-in memory management for storing arbitrary-length strings, support for different character encoding, and utilities for string formatting.
 
+To create a new string:
+```
+NSString *newString = @"this is my new string";
+```
+
+To create a new formatted string
+```
+NSString *newFormattedString = [NSString stringWithFormat:@"%d %@", 1, @"string"];
+```
+
+### Numbers
+Create a number in shorthand by using the @ sign.
+
+To create an integer
+```
+NSNumber *newIntValue = @32
+```
+
+To create a double value
+```
+NSNumber *newDoubleValue = @3.223483943
+```
+
+### Collections
+
+- NSArray & NSMutableArray: an ordered collection of objects. Access the object by specifying its index in the array.
+- NSSet & NSMutableSet: an unordered collection of objects, each only occuring once. Access the object by applying filters and tests to objects in the set.
+- NSDictionary & NSMutableDictionary: key-value pairs. The key is the unique identifier (usually a string) and the value is the stored object. Access the object by specifying its key.
+
+### Arrays
+All items must be objective-c objects (e.g. NSObject, NSNumber, NSString, NSValue, etc), but do not need to be an instance of the same class (e.g @[@"hi", @32])
+
+To create an array:
+```
+NSArray *newArray = @[@"hi", @"hello", @"welcome"];
+```
+
+To create an array in a different way:
+```
+id firstObject = @"someString"
+id secondObject = @"secondString"
+id thirdObject = @"anotherString"
+NSArray *someArray = [NSArray arrayWithObjects: firstObject, secondObject, thirdObject, nil]
+```
+
+* Because the methods arrayWithObjects (and initWithObjects) both take a nil-terminated, variable number of arguments, must have nil as the final value.
 
 
