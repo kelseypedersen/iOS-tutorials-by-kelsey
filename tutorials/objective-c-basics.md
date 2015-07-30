@@ -75,11 +75,30 @@ You do not need to do any manual work to pop on or off viewControllers, the back
 ### Segues - Transitioning Controllers
 The transition between 2 viewControllers: the source and the destination.
 
-1. Show: pushes new content on top of the current viewController stack. Where the content shows up depends on the layout of the viewControllers in the scene.
+1. Show: pushes new content on top of the current viewController stack. Where the content shows up depends on the layout of the viewControllers in the scene. e.g. drilling down in detail in a view
 2. Show detail: pushes new content on top of the current viewController stack or replaces the content shown, depending on the layout of the viewControllers in the scene.
-3. Present Modally: A modal segue is one viewController presenting another viewController modally, requiring a user to perform an action before returning to the presenting viewController. Isn't added to the navigation stack, child of presenting viewController. The presenting viewController is responsible for dismissing the modal viewController it created and presented.
+3. Present Modally: A modal segue is one viewController presenting another viewController modally, requiring a user to perform an action before returning to the presenting viewController. Isn't added to the navigation stack, child of presenting viewController. The presenting viewController is responsible for dismissing the modal viewController it created and presented. Because a modal viewController isn't added to the naviation stack - it doesn't get a navigation bar from the nav viewController. e.g. Adding an item.
 4. Popover Presentation: The presented viewController is shown as a popover anchored to an existing view.
 5. Custom: UIStoryboardSegue
 6. Unwind: Moves backwards through one or more segues to return the user to an existing instance of a viewController. Used to implement reverse navigation.
 
 Scenes can also be connected by relationships. For example, the relationship between the root viewController and the navigation viewController. This relationship represents the containment of the root viewController by the navigation viewController.
+
+### Data Models
+Defines the way you maintain data in your app. Can range from a basic dictionary to a complex database. Should be defined separately from viewControllers and views (Basic MVC.).
+
+### Designing Models
+Small Amount of Data: use Foundation Framework (NSString, NSArray, etc.)
+Custom Logic Needed: create custom classes, but utilize frameworks already created. E.g. use NSMutableArray and add custom logic/features.
+
+### Design Pattern: Target Action
+One object sends message to another object when an action occurs. The action message is a selector defined in source code, and the target (the object receiving the message) is typically the viewController. The object sending the message is usually a control, like a button or slider, that triggers an event in response to a user gesture like a tap, drag or value change.
+
+E.g. Restoring default settings in an app when the user clicks 'clear.' First you create a restoreDefaults: method to perform the logic to restore default settings. Second you register the buttons Touch Up Inside event to send the restoreDefaults: action method to the viewController which implements the method.
+
+E.g. In the to-do app, when a user clicks on the save button in the addTodoItemViewController, it triggers the unwindToList: action. The event triggering the action message is the user clicking on the save button, the save button is the object sending the message, the target object is the todoListTableViewController and the message is unwindToList:.
+
+### Strings
+
+
+
