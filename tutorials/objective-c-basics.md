@@ -194,6 +194,75 @@ NSMutableArray *mutableArray = [NSMutableArray array];
 [mutableArray replaceObjectAtIndex:2 withObject @"theta"];
 ```
 
+### Sets
+
+To create a set:
+```
+NSSet *simpleSet = [NSSet setWithObjects:@"Hello", @31, nil]
+```
+
+### Dictionaries
+Best practice is to create keys from strings. The values can be any object.
+
+To create a dictionary using initialization:
+- the key is after the object
+
+```
+NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                @"Kelsey", @"firstName",
+              @"Pedersen", @"lastName",
+                      @15, @"favoriteNumber",
+                      @24, @"age",
+                      nil];
+```
+
+To create a dictionary using concise literal notation:
+- the key is before the object
+
+```
+NSDictionary *dictionary = @{
+          @"firstName" : @"Kelsey",
+          @"lastName"  : @"Pedersen",
+      @"favoriteNumber : @15,
+                @"age" : @24
+};
+```
+
+### Querying Dictionaries
+
+```
+NSNumber *favoriteNumber = [dictionary objectForKey:@"favoriteNumber"];
+```
+ - if the object isn't found, the method objectForKey returns nil
+
+Shorthand Syntax
+```
+NSNumber *favoriteNumber = dictionary[@"favoriteNumber"];
+```
+
+### Adding and Removing from Dictionaries
+
+```
+[dictionary setObject:@25 forKey:@"age"];
+[dictionary removeObjectForKey:@"lastName"]
+```
+
+### Representing nil with NSNull
+It is not possible to add nil to a collection because nil means no object. Need to use NSNull to return and instance of null.
+
+```
+NSArray *array = @[ @"string", @42, [NSNull null] ];
+```
+
+* Singleton Classes: the method always return the same instance, e.g. null method (NSNull)
+
+
+
+
+
+
+
+
 
 
 
