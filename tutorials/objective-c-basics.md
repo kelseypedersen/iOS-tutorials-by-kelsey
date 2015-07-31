@@ -148,4 +148,55 @@ NSArray *someArray = [NSArray arrayWithObjects: firstObject, secondObject, third
 
 * Because the methods arrayWithObjects (and initWithObjects) both take a nil-terminated, variable number of arguments, must have nil as the final value.
 
+### Querying Arrays
+
+To search number of objects:
+```
+NSUInteger numberOfObjects = [someArray count];
+```
+
+To search whether it has a specific item or not:
+```
+if ([someArray containsObject:secondObject]) {
+  ...
+}
+```
+
+To search item at given index (always check the number of items first, ie. the if statement)
+```
+if ([someArray count] > 0) {
+  NSLog(@"First item is: %@", [someArray objectAtIndex: 0]);
+}
+```
+
+Another way to search item at given index
+```
+if ([someArray count] > 0) {
+    NSLog(@"First item is: %@", someArray[0]);
+}
+```
+
+### Sorting Arrays
+Because NSArray is immutable, sorting returns a new array.
+
+```
+NSArray *unsorted = @[@"gamma", @"beta", @"theta"];
+NSArray *sorted = [unsorted sortedArrayUsingSelector:@selector(compare:)];
+```
+
+### Adding and Removing from Arrays
+```
+NSMutableArray *mutableArray = [NSMutableArray array];
+[mutableArray addObject:@"gamma"];
+[mutableArray addObject:@"beta"];
+[mutableArray addObject:@"epsilon"];
+
+[mutableArray replaceObjectAtIndex:2 withObject @"theta"];
+```
+
+
+
+
+
+
 
